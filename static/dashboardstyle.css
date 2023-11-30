@@ -1,0 +1,116 @@
+body {
+    background-image: url('petchat1.jfif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    position: absolute;
+    top: 15px;
+    left: 30px;
+}
+
+.logo img {
+    width: 130px;
+    height: 130px;
+    margin-right: 15px;
+}
+
+h1 {
+    text-align: center;
+    color: black; /* Set the desired font color */
+    font-size: 3em; /* Set the desired font size */
+    padding: 20px;
+    margin: 40px auto 0 auto; /* Adjust the margin-top value to move it down */
+  }
+  
+  .chat-history {
+    height: 450px; /* Set the desired height */
+    overflow-y: auto;
+    margin: 0 auto 10px auto;
+    max-width: 1500px; /* Adjust the maximum width as needed */
+    width: 100%;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    border-radius: 15px; /* Slightly rounded corners for the form */
+  }
+
+  /* 각 메시지에 대한 스타일 */
+  .user, .assistant {
+    margin-bottom: 10px; /* 각 메시지 사이의 간격 설정 */
+  }
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto; /* Adjust the margin-top value to move it up */
+  max-width: 1500px; /* Adjust the maximum width as needed */
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  border-radius: 15px; /* Slightly rounded corners for the form */
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  height: 40px; /* Set the height of the input field */
+}
+
+button {
+  width: 150px;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold; /* Make the text bold */
+  box-sizing: border-box;
+  background-color: #333; /* Dark background color */
+  color: white;
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  height: 40px; /* Set the height of the button */
+  margin-left: 0; /* Adjust margin to ensure it is next to the input field */
+  transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+button:hover {
+  background-color: #000000; /* Darker background color on hover */
+}
+
+.links {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+a {
+  display: inline-block;
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.links {
+    position: absolute;
+    top: 30px; /* Adjust the top position as needed */
+    right: 40px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    font-size: 25px; /* Adjust the font size as needed */
+    margin: 0 10px;
+    display: inline;
+}

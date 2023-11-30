@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>UDOG 회원가입</title>
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 92vh;
+        margin: 0;
+        background-image: url("{{ url_for('static', filename='bg.png') }}"); /* Replace 'bg2.png' with the path to your background image */
+        background-size: cover;
+        background-position: center;
+      }
+
+      .content {
+        text-align: center;
+        color: #ffffff; /* Set text color to be visible against the background */
+        border: 2px solid #ffffff; /* Border color (white in this example) */
+        border-radius: 10px; /* Adjust the border-radius for rounded corners */
+        padding: 60px; /* Add padding to the container */
+        width: 32%; /* Adjust the width as needed */
+        margin: 50px auto 0; /* Add margin to the top to move it down */
+      }
+
+      h1 {
+        font-size: 45px; /* Adjust the font size as needed */
+        font-weight: bold; /* Make the title bold */
+      }
+
+      form {
+        text-align: center;
+      }
+
+      input[type="text"]::placeholder,
+      input[type="password"]::placeholder {
+        color: #333; /* Set placeholder text color to a custom color (yellow in this example) */
+        font-size: 16px; /* Adjust the placeholder font size as needed */
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        width: 450px; /* Adjust the width as needed */
+        padding: 15px; /* Adjust the padding as needed */
+        margin-bottom: 10px; /* Add margin to separate the inputs */
+        font-size: 16px; /* Adjust the font size as needed */
+        color: #000000; /* Set text color to a dark color */
+      }
+
+      button {
+        width: 484px; /* Adjust the width as needed */
+        padding: 10px; /* Adjust the padding as needed */
+        font-size: 18px; /* Adjust the font size as needed */
+        font-weight: bold; /* Make the title bold */
+        color: #ffffff; /* Text color (white in this example) */
+        background-color: #333; /* Background color (pink in this example) */
+        border: 0px solid #333; /* Border color (pink in this example) */
+        border-radius: 5px; /* Optional: Add rounded corners */
+        transition: background-color 0.3s ease; /* Smooth transition effect */
+      }
+
+      button:hover {
+        background-color: #000000; /* New background color on hover (darker pink in this example) */
+      }
+
+      p {
+        font-size: 18px; /* Adjust the font size as needed */
+        margin-top: 35px; /* Add margin below the button */
+      }
+
+      a {
+        font-size: 17.4px; /* Adjust the font size as needed */
+        font-weight: bold; /* Make the title bold */
+        color: #ffffff; /* Set hyperlink color to white */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <h1>회원가입</h1>
+      <form action="/join" method="post">
+        <input type="text" name="username" placeholder="사용자 이름" required><br>
+        <input type="password" name="password" placeholder="비밀번호" required><br>
+        <button type="submit">회원가입</button>
+      </form>
+      <p>이미 회원이신가요? <a href="/login">로그인하세요.</a></p>
+    </div>
+  </body>
+</html>

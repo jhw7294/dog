@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>UDOG 챗봇</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dashboardstyle.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  </head>
+  <body>
+      <!-- Logo -->
+      <div class="logo">
+        <img src="{{ url_for('static', filename='dog-logo.png') }}" alt="Logo">
+      </div>
+      <h1>UDOG</h1>
+  
+      <!-- Display Question and Answer -->
+      <div id="chat-history" class="chat-history">
+      <!-- 결과가 여기에 동적으로 추가될 것입니다. -->
+      </div>
+
+      <!-- 결과 출력 중 표시 -->
+      <div id="loading" style="display: none;">결과 출력 중...</div>
+
+      <!-- Existing Form -->
+      <form id="chat-form" action="/chat2" method="post">
+        <input type="text" name="message" id="message" placeholder="질문해주세요." required><br>
+        <button type="submit">전송</button>
+      </form>
+
+      <!-- Links Div -->
+     <div class="links">
+       <a href="/index">메인 페이지로 이동</a>
+       <a href="/logout">로그아웃</a>
+       <a href="/contact" target="_blank">고객 문의</a>
+      </div>
+
+    <!-- JavaScript 코드 -->
+    <script>
+        $(document).ready(function() {
+            $('#chat-form').submit(function(e) {
+                e.preventDefault();
+                var message = $('#message').val();
+
+                // 결과 출력 중 표시
+                $('#loading').show();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/chat2',
+                    data: {message: message},
+                    success: function(response) {
+                        // 결과를 동적으로 추가
+                        $('#chat-history').html(response.chat_history);
+                        // 입력 필드 초기화
+                        $('#message').val('');
+                        // 결과 출력 중 표시 숨김
+                        $('#loading').hide();
+                    },
+                    error: function(error) {
+                        console.log(error);
+                        // 결과 출력 중 표시 숨김
+                        $('#loading').hide();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

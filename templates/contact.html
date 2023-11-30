@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDOG 고객 문의</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='contactstyle.css') }}"> <!-- Link to your external CSS file -->
+</head>
+<body>
+    <h1 class="thicker-font">고객 문의</h1>
+    <div class="container">
+        <div class="content">
+            <img src="{{ url_for('static', filename='contactphoto.png') }}" alt="Your Image"> <!-- Placeholder image -->
+            <div class="description">
+                <p>
+                    상호 ┃ 이거4조<br>
+                    <br>
+                    주소 ┃ 서울 성북구 정릉로 77 // 경영관 3층 15호실<br>
+                    <br>
+                    연락처<br>
+                    <span class="smaller-text">프론트엔드 ┃ 장정원(gardenwkd@kookmin.ac.kr)<br>
+                    <span class="smaller-text">백엔드 ┃ 김가빈(gabeen@kookmin.ac.kr), 손채연(sina9326@kookmin.ac.kr)<br>
+                        <span class="much-smaller-text">
+                    <span class="smaller-text">데이터 ┃ 정규석(gyuseok07@kookmin.ac.kr), 정현우(jhw7294@kookmin.ac.kr)
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
